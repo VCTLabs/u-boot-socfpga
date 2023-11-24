@@ -21,7 +21,7 @@ class pll_config_h:
         """ renderer initialization """
         self.hpsModel = hpsModel
         self.emifModel = emifModel
-        self.doc = doc.generated_c_source("__SOCFPGA_PLL_CONFIG_H__")
+        self.doc = doc.generated_c_source("__SOCFPGA_PLL_CFG_H__")
 
     def createContent(self):
         """ add the content based on settings parsed. eventually it will be
