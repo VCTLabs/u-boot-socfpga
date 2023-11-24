@@ -17,7 +17,7 @@ class IOCSRGrokker(object):
     """ Decode the .hiof file and produce some C source code
     """
     IOCSR_ROOT_FILENAME = 'iocsr_config'
-    IOCSR_SENTINEL = '__SOCFPGA_IOCSR_CONFIG_H__'
+    IOCSR_SENTINEL = '__SOCFPGA_IOCSR_CFG_H__'
     IOCSR_FILE_EXTENSION_MAX_LEN = 6
     PTAG_HPS_IOCSR_INFO = 39
     PTAG_HPS_IOCSR = 40

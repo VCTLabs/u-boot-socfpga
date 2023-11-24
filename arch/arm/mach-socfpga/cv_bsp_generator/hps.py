@@ -35,7 +35,7 @@ class HPSGrokker(object):
 
     MAKEFILE_FILENAME = "Makefile"
     makefileTemplate = ""
-    RESET_CONFIG_H_FILENAME = "reset_config.h"
+    RESET_CFG_H_FILENAME = "reset_config.h"
     resetConfigHTemplate = ""
 
     # If no device family is specified, assume Cyclone V.
@@ -554,7 +554,7 @@ class HPSGrokker(object):
         self.pinmux_config_src = 'pinmux_config_' + self.derivedDeviceFamily + '.c'
 
         # Create pinmux_config .h
-        headerDefine = "__SOCFPGA_PINMUX_CONFIG_H__"
+        headerDefine = "__SOCFPGA_PINMUX_CFG_H__"
         self.pinmuxHeaderFile = streamer.Streamer(self.outputDir + os.sep + self.pinmux_config_h, 'w')
         self.pinmuxHeaderFile.open()
         self.pinmuxHeaderFile.writeLicenseHeader()
