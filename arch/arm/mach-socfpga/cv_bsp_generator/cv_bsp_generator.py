@@ -26,13 +26,13 @@ import sys
 
 def printUsage():
     """ usage string """
-    print ("Usage:\n\t%s\n" % ("sys.argv[0], --input_dir=<path to iswinfo directory> --output_dir=<path store output files>"))
+    print(("Usage:\n\t%s\n" % ("sys.argv[0], --input_dir=<path to iswinfo directory> --output_dir=<path store output files>")))
     exit(1)
 
 def verifyInputDir(dir):
     """ check if the input directory exists """
     if not os.path.isdir(dir):
-        print ("There is no such directory '%s'!\n" % (dir))
+        print(("There is no such directory '%s'!\n" % (dir)))
         exit(1)
 
 def verifyOutputDir(dir):
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     (options, args) = optParser.parse_args()
 
     for arg in args:
-        print ("***WARNING: I don't understand '%s', so I am ignoring it\n" % (arg))
+        print(("***WARNING: I don't understand '%s', so I am ignoring it\n" % (arg)))
 
     inputDir = options.inputDir
     verifyInputDir(inputDir)
@@ -70,7 +70,7 @@ if __name__ == '__main__':
     hps = hps.HPSGrokker(inputDir, outputDir)
 
     pllConfigH = outputDir + "/" + "pll_config.h"
-    print ("Generating file: " + pllConfigH)
+    print(("Generating file: " + pllConfigH))
     hpsModel = model.hps.create(inputDir + "/" + "hps.xml")
     emifModel = model.emif.create(inputDir +"/" + "emif.xml")
 
@@ -90,7 +90,7 @@ if __name__ == '__main__':
         print ("          Only the last .hiof file in the list will be converted")
         print ("          hiof files found:")
         for f in hiof_list:
-            print ("              " + f)
+            print(("              " + f))
 
     for hiof_file_path in hiof_list:
         hiof_file = os.path.basename(hiof_file_path)

@@ -341,7 +341,7 @@ class EMIFGrokker(object):
         # Get a list of all nodes with the emif element name
         emifNodeList = self.emifDom.getElementsByTagName('emif')
         if len(emifNodeList) > 1:
-            print ("*** WARNING:" + "Multiple emif Elements found in %s!" % self.emifFileName)
+            print(("*** WARNING:" + "Multiple emif Elements found in %s!" % self.emifFileName))
         # For each of the emif element nodes, go through the child list
         # Note that currently there is only one emif Element
         # but this code will handle more than one emif node
