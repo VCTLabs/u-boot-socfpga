@@ -58,7 +58,7 @@ class pll_config_h:
         paramMap["VCO_DENOM"] = "main_pll_n"
         paramMap["VCO_NUMER"] = "main_pll_m"
 
-        for key in paramMap.keys():
+        for key in list(paramMap.keys()):
             id = "CFG_HPS_MAINPLLGRP_" + key
             value = self.hpsModel.getSystemConfig(paramMap[key])
             doc.c_source.define(self.doc, id,  value )
@@ -83,7 +83,7 @@ class pll_config_h:
         paramMap["L4SRC_L4MP"] = "l4_mp_clk_source"
         paramMap["L4SRC_L4SP"] = "l4_sp_clk_source"
 
-        for key in paramMap.keys():
+        for key in list(paramMap.keys()):
             id = "CFG_HPS_MAINPLLGRP_" + key
             value = self.hpsModel.getSystemConfig(paramMap[key])
             doc.c_source.define(self.doc, id, value )
@@ -109,7 +109,7 @@ class pll_config_h:
         paramMap["SRC_NAND"] = "nand_clk_source"
         paramMap["SRC_QSPI"] = "qspi_clk_source"
 
-        for key in paramMap.keys():
+        for key in list(paramMap.keys()):
             id = "CFG_HPS_PERPLLGRP_" + key
             value = self.hpsModel.getSystemConfig(paramMap[key])
             doc.c_source.define(self.doc, id, value )
@@ -147,7 +147,7 @@ class pll_config_h:
         paramMap["MAINVCO"] = "main_pll_vco_hz"
         paramMap["PERVCO"] = "periph_pll_vco_hz"
 
-        for key in paramMap.keys():
+        for key in list(paramMap.keys()):
             id = "CFG_HPS_CLK_" + key + "_HZ"
             value = self.hpsModel.getSystemConfig(paramMap[key])
             doc.c_source.define(self.doc, id, value )
@@ -173,7 +173,7 @@ class pll_config_h:
         paramMap["L4_MP"] = "l4_mp_clk_hz"
         paramMap["L4_SP"] = "l4_sp_clk_hz"
 
-        for key in paramMap.keys():
+        for key in list(paramMap.keys()):
             id = "CFG_HPS_CLK_" + key + "_HZ"
             value = self.hpsModel.getSystemConfig(paramMap[key])
             doc.c_source.define(self.doc, id, value )
@@ -185,7 +185,7 @@ class pll_config_h:
         paramMap["MAINCLK"] = "main_pll_c1_internal"
         paramMap["DBGATCLK"] = "main_pll_c2_internal"
 
-        for key in paramMap.keys():
+        for key in list(paramMap.keys()):
             id = "CFG_HPS_ALTERAGRP_" + key
             value = self.hpsModel.getSystemConfig(paramMap[key])
             doc.c_source.define(self.doc, id, value )
