@@ -459,15 +459,24 @@ class HPSGrokker(object):
 
         reg_count = 0
         pinmux_regs_count = len(self.pinmux_regs)
-        for reg, value in self.pinmux_regs.items():
+        for reg, value in list(self.pinmux_regs.items()):
             reg_count += 1
             if reg_count < pinmux_regs_count:
+<<<<<<< HEAD
                 self.pinmuxHeaderBuffer.write(str("\t" + str(value) + ', /* ' + reg + ' */\n' ))
             else:
                 self.pinmuxHeaderBuffer.write(str("\t" + str(value) + ' /* ' + reg + ' */\n' ))
 
         # Write the close of the pin MUX array in the header
         self.pinmuxHeaderBuffer.write(str("};" ))
+=======
+                self.pinmuxHeaderBuffer.write( str("\t" + str(value) + ', /* ' + reg + ' */\n' ))
+            else:
+                self.pinmuxHeaderBuffer.write( str("\t" + str(value) + ' /* ' + reg + ' */\n' ))
+
+        # Write the close of the pin MUX array in the header
+        self.pinmuxHeaderBuffer.write( str("};" ))
+>>>>>>> Make intel scripts python 3 compatible
 
     def handleHPSClockNode(self, clockNode):
         """ A clockNode may emit a #define for the name, frequency pair
@@ -522,7 +531,7 @@ class HPSGrokker(object):
         # Get a list of all nodes with the hps element name
         hpsNodeList = self.dom.getElementsByTagName('hps')
         if len(hpsNodeList) > 1:
-            print ("*** WARNING:" + "Multiple hps Elements found in %s!" % self.hpsInFileName)
+            print(("*** WARNING:" + "Multiple hps Elements found in %s!" % self.hpsInFileName))
         # For each of the hps element nodes, go through the child list
         # Note that currently there is only one hps Element
         # but this code will handle more than one hps node
@@ -544,7 +553,11 @@ class HPSGrokker(object):
                 elif childNode.nodeName == 'peripherals':
                     self.handleHPSPeripheralNode(childNode)
                 else:
+<<<<<<< HEAD
                     print ("***Error:Found unexpected HPS child node:%s" % childNode.nodeName)
+=======
+                    print('***Error:Found unexpected HPS child node:%s' % childNode.nodeName)
+>>>>>>> Make intel scripts python 3 compatible
                 childNode = xmlgrok.nextElementSibling(childNode)
 
         self.updateTemplate("DERIVED_DEVICE_FAMILY", self.derivedDeviceFamily)

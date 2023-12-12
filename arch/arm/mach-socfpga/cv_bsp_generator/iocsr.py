@@ -90,7 +90,7 @@ class IOCSRGrokker(object):
     def verifyRead(self, tagWeRead, tagWeExpected):
         """ verify the hiof value with tag expected """
         if tagWeRead != tagWeExpected:
-            print ("***Error: Expected ptag of %02d, but got %02d" % (tagWeExpected, tagWeRead))
+            print(("***Error: Expected ptag of %02d, but got %02d" % (tagWeExpected, tagWeRead)))
 
     def createFilesFromHIOF(self):
         """ read the hiof file to create iocsr_config.h """

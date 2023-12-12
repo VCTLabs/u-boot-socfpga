@@ -35,16 +35,16 @@ class Streamer(object):
         if self.fileName != None:
             if self.file == None:
                 if self.fileMode == 'write':
-                    print ("Generating file: %s..." % self.fileName)
+                    print(("Generating file: %s..." % self.fileName))
                 else:
-                    print ("Reading file: %s..." % self.fileName)
+                    print(("Reading file: %s..." % self.fileName))
                 self.file = open(self.fileName, self.mode)
 
     def read(self, numBytes):
         """ file read number of bytes """
         if self.file == None:
-            print ("***Error: Attempted to read from unopened file %s" \
-                  % (self.fileName))
+            print(("***Error: Attempted to read from unopened file %s" \
+                  % (self.fileName)))
             exit(-1)
 
         else:
@@ -70,8 +70,8 @@ class Streamer(object):
     def write(self, str):
         """ file write """
         if self.file == None:
-            print ("***Error: Attempted to write to unopened file %s" \
-                % (self.fileName))
+            print(("***Error: Attempted to write to unopened file %s" \
+                % (self.fileName)))
             exit(-1)
 
         else:
